@@ -1,0 +1,140 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh14860\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>For You \uc0\u10084 \u65039 </title>\
+    <style>\
+        body \{\
+            display: flex;\
+            flex-direction: column;\
+            align-items: center;\
+            justify-content: center;\
+            height: 100vh;\
+            margin: 0;\
+            background-color: #ffeef2;\
+            font-family: 'Arial', sans-serif;\
+            overflow: hidden;\
+        \}\
+\
+        #container \{\
+            text-align: center;\
+            background: white;\
+            padding: 40px;\
+            border-radius: 20px;\
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);\
+            z-index: 10;\
+        \}\
+\
+        h1 \{\
+            color: #ff4d6d;\
+            font-size: 2.5rem;\
+            margin-bottom: 20px;\
+        \}\
+\
+        .gif-container img \{\
+            width: 200px;\
+            margin-bottom: 20px;\
+        \}\
+\
+        .buttons \{\
+            display: flex;\
+            gap: 20px;\
+            justify-content: center;\
+            margin-top: 20px;\
+        \}\
+\
+        button \{\
+            padding: 15px 30px;\
+            font-size: 1.2rem;\
+            border: none;\
+            border-radius: 10px;\
+            cursor: pointer;\
+            transition: transform 0.2s;\
+        \}\
+\
+        #yesBtn \{\
+            background-color: #ff4d6d;\
+            color: white;\
+        \}\
+\
+        #noBtn \{\
+            background-color: #888;\
+            color: white;\
+            position: absolute;\
+        \}\
+\
+        #successMessage \{\
+            display: none;\
+            text-align: center;\
+        \}\
+\
+        #successMessage h1 \{\
+            font-size: 3rem;\
+            animation: bounce 1s infinite;\
+        \}\
+\
+        @keyframes bounce \{\
+            0%, 100% \{ transform: translateY(0); \}\
+            50% \{ transform: translateY(-20px); \}\
+        \}\
+    </style>\
+</head>\
+<body>\
+\
+    <div id="container">\
+        <div id="mainSection">\
+            <div class="gif-container">\
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp1ZHZ1eGpxZzB2ZW9oZzB2ZW9oZzB2ZW9oZzB2ZW9oZzB2ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/L95W4wv8nnb9MMxRK1/giphy.gif" alt="Cute Bear">\
+            </div>\
+            <h1>Will you be my Valentine?</h1>\
+            <div class="buttons">\
+                <button id="yesBtn">Yes!</button>\
+                <button id="noBtn">No</button>\
+            </div>\
+        </div>\
+\
+        <div id="successMessage">\
+            <div class="gif-container">\
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp1ZHZ1eGpxZzB2ZW9oZzB2ZW9oZzB2ZW9oZzB2ZW9oZzB2ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/vX9W4v1O9YI9W/giphy.gif" alt="Happy Dance">\
+            </div>\
+            <h1>YAY! I knew it! \uc0\u10084 \u65039 </h1>\
+            <p>See you on our date!</p>\
+        </div>\
+    </div>\
+\
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>\
+    <script>\
+        const noBtn = document.getElementById('noBtn');\
+        const yesBtn = document.getElementById('yesBtn');\
+        const mainSection = document.getElementById('mainSection');\
+        const successMessage = document.getElementById('successMessage');\
+\
+        // Logic to move the No button\
+        noBtn.addEventListener('mouseover', () => \{\
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);\
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);\
+            noBtn.style.left = x + 'px';\
+            noBtn.style.top = y + 'px';\
+        \});\
+\
+        // Logic for the Yes button\
+        yesBtn.addEventListener('click', () => \{\
+            mainSection.style.display = 'none';\
+            successMessage.style.display = 'block';\
+            confetti(\{\
+                particleCount: 150,\
+                spread: 70,\
+                origin: \{ y: 0.6 \}\
+            \});\
+        \});\
+    </script>\
+</body>\
+</html>}
