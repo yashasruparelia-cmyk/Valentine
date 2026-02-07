@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For You ❤️</title>
+    <title>For Dhvani Shah ❤️</title>
     <style>
         body {
             display: flex;
@@ -28,13 +28,14 @@
 
         h1 {
             color: #ff4d6d;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 20px;
         }
 
         .gif-container img {
             width: 200px;
             margin-bottom: 20px;
+            border-radius: 10px;
         }
 
         .buttons {
@@ -70,7 +71,7 @@
         }
 
         #successMessage h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             animation: bounce 1s infinite;
         }
 
@@ -85,8 +86,9 @@
     <div id="container">
         <div id="mainSection">
             <div class="gif-container">
-              <img src="https://i.giphy.com/L95W4wv8nnb9MMxRK1.webp" alt="Cute Bear">
-            <h1>Will you be my Valentine?</h1>
+                <img src="https://i.giphy.com/L95W4wv8nnb9MMxRK1.webp" alt="Cute Bear">
+            </div>
+            <h1>Dhvani Shah, will you be my valentine?</h1>
             <div class="buttons">
                 <button id="yesBtn">Yes!</button>
                 <button id="noBtn">No</button>
@@ -95,10 +97,10 @@
 
         <div id="successMessage">
             <div class="gif-container">
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp1ZHZ1eGpxZzB2ZW9oZzB2ZW9oZzB2ZW9oZzB2ZW9oZzB2ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/vX9W4v1O9YI9W/giphy.gif" alt="Happy Dance">
+                <img src="https://i.giphy.com/vX9W4v1O9YI9W.webp" alt="Happy Dance">
             </div>
             <h1>YAY! I knew it! ❤️</h1>
-            <p>See you on our date!</p>
+            <p>I love you, Dhvani!</p>
         </div>
     </div>
 
@@ -109,7 +111,6 @@
         const mainSection = document.getElementById('mainSection');
         const successMessage = document.getElementById('successMessage');
 
-        // Logic to move the No button
         noBtn.addEventListener('mouseover', () => {
             const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
             const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
@@ -117,13 +118,12 @@
             noBtn.style.top = y + 'px';
         });
 
-        // Logic for the Yes button
         yesBtn.addEventListener('click', () => {
             mainSection.style.display = 'none';
             successMessage.style.display = 'block';
             confetti({
-                particleCount: 150,
-                spread: 70,
+                particleCount: 200,
+                spread: 100,
                 origin: { y: 0.6 }
             });
         });
